@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User
-from rest_framework import serializers
+from rest_framework import serializers, validators
 
 from .models import Dance, Artist, Label, Song, Rating, Comment
 
@@ -39,17 +39,37 @@ class ShortLabelSerializer(serializers.ModelSerializer):
 
 
 class RatingSerializer(serializers.HyperlinkedModelSerializer):
+    # this is just for the validator: we set the creation_user here to make it checkable
+    creation_user = serializers.PrimaryKeyRelatedField(read_only=True, default=serializers.CurrentUserDefault())
+
     class Meta:
         model = Rating
         fields = ("url", "song", "value", "creation_user", "creation_date", "last_edit_user", "last_edit_date",)
         read_only_fields = ("creation_user", "last_edit_user",)
 
+        validators = [
+            validators.UniqueTogetherValidator(
+                queryset=Rating.objects.all(),
+                fields=('song', 'creation_user')
+            )
+        ]
+
 
 class CommentSerializer(serializers.HyperlinkedModelSerializer):
+    # this is just for the validator: we set the creation_user here to make it checkable
+    creation_user = serializers.PrimaryKeyRelatedField(read_only=True, default=serializers.CurrentUserDefault())
+
     class Meta:
         model = Comment
         fields = ("url", "song", "note", "creation_user", "creation_date", "last_edit_user", "last_edit_date",)
         read_only_fields = ("creation_user", "last_edit_user",)
+
+        validators = [
+            validators.UniqueTogetherValidator(
+                queryset=Comment.objects.all(),
+                fields=('song', 'creation_user')
+            )
+        ]
 
 
 class SongSerializer(serializers.HyperlinkedModelSerializer):
@@ -59,6 +79,13 @@ class SongSerializer(serializers.HyperlinkedModelSerializer):
                   "artist", "dance", "labels", "ratings", "comments",
                   "creation_user", "creation_date", "last_edit_user", "last_edit_date",)
         read_only_fields = ("creation_user", "last_edit_user",)
+
+        validators = [
+            validators.UniqueTogetherValidator(
+                queryset=Song.objects.all(),
+                fields=('title', 'artist', 'dance')
+            )
+        ]
 
 
 class DetailedSongSerializer(serializers.ModelSerializer):
