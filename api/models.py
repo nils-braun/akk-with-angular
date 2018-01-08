@@ -55,7 +55,8 @@ class Song(CreatableModel):
 
     @property
     def mean_rating(self):
-        return 1
+        rating_values = [rating.value for rating in self.ratings.all()]
+        return sum(rating_values) / len(rating_values) if rating_values else None
 
     class Meta:
         unique_together = ("artist", "dance", "title")
