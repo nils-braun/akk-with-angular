@@ -15,6 +15,8 @@ const routes : Routes = [
   { path: 'edit-artist', component: ArtistEditWindowComponent },
   { path: 'edit-dance', component: DanceEditWindowComponent },
   { path: 'edit-song/:id', component: SongEditWindowComponent },
+
+  // maybe easier with     data: { title: 'Heroes List' }
 ];
 
 @NgModule({
