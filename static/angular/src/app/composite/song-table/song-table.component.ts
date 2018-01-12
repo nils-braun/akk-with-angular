@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Song } from '../entities/song';
+import { Song } from '../../entities/song';
 
 @Component({
   selector: 'app-song-table',
