@@ -1,0 +1,30 @@
+<table>
+  <thead>
+    <tr>
+      <th>Song Title</th>
+      <th>Artist Name</th>
+      <th>Dance Name</th>
+      <th>Label</th>
+      <th>Rating</th>
+      <th>Duration</th>
+      <th>BPM</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let song of songs">
+      <td>{{ song.title }}</td>
+      <td>{{ song.artist }}</td>
+      <td>{{ song.dance }}</td>
+      <td>
+        <app-label-list-view [labels]="song.labels"></app-label-list-view>
+      </td>
+      <td>
+        <app-rating-view [rating]="song.rating"></app-rating-view>
+      </td>
+      <!--<td>{{("00"+song.duration.minutes).slice(-2)}}:{{("00"+song.duration.seconds).slice(-2)}}</td>-->
+      <td>
+        <app-bpm-view [bpm]="song.bpm"></app-bpm-view>
+      </td>
+    </tr>
+  </tbody>
+</table>
