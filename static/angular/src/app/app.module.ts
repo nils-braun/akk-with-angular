@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -9,11 +10,18 @@ import { SongTableComponent } from './song-table/song-table.component';
 import { AddButtonComponent } from './add-button/add-button.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { SongFormComponent } from './song-form/song-form.component';
-import { RatingViewComponent } from './rating-view/rating-view.component';
-import { LabelViewComponent } from './label-view/label-view.component';
-import { LabelListViewComponent } from './label-list-view/label-list-view.component';
+import { RatingViewComponent } from './basics/rating-view/rating-view.component';
+import { LabelViewComponent } from './basics/label-view/label-view.component';
+import { LabelListViewComponent } from './basics/label-list-view/label-list-view.component';
 import { PlaylistViewComponent } from './playlist-view/playlist-view.component';
 import { BpmViewComponent } from './bpm-view/bpm-view.component';
+import { AppRoutingModule } from './app-routing.module';
+import { SongListWindowComponent } from './windows/song-list-window/song-list-window.component';
+import { WishListWindowComponent } from './windows/wish-list-window/wish-list-window.component';
+import { PlaylistsWindowComponent } from './windows/playlists-window/playlists-window.component';
+import { SongEditWindowComponent } from './windows/song-edit-window/song-edit-window.component';
+import { DanceEditWindowComponent } from './windows/dance-edit-window/dance-edit-window.component';
+import { ArtistEditWindowComponent } from './windows/artist-edit-window/artist-edit-window.component';
 
 
 @NgModule({
@@ -29,10 +37,18 @@ import { BpmViewComponent } from './bpm-view/bpm-view.component';
     LabelViewComponent,
     LabelListViewComponent,
     PlaylistViewComponent,
-    BpmViewComponent
+    BpmViewComponent,
+    SongListWindowComponent,
+    WishListWindowComponent,
+    PlaylistsWindowComponent,
+    SongEditWindowComponent,
+    DanceEditWindowComponent,
+    ArtistEditWindowComponent,
   ],
   imports: [
-    BrowserModule
+    NgbModule.forRoot(),
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

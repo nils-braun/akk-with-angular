@@ -1,4 +1,4 @@
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Song Title</th>
@@ -20,6 +20,9 @@
       </td>
       <td>
         <app-rating-view [rating]="song.rating"></app-rating-view>
+      </td>
+      <td>
+        Duration
       </td>
       <!--<td>{{("00"+song.duration.minutes).slice(-2)}}:{{("00"+song.duration.seconds).slice(-2)}}</td>-->
       <td>

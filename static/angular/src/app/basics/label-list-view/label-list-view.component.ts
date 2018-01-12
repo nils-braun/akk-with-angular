@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Label} from '../entities/label';
+import {Label} from '../../entities/label';
 
 @Component({
   selector: 'app-label-list-view',

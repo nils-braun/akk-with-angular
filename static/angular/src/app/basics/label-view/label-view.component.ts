@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Label} from '../../entities/label';
 
 @Component({
   selector: 'app-label-view',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./label-view.component.css']
 })
 export class LabelViewComponent implements OnInit {
+
+  @Input() label: Label;
 
   constructor() { }
 
