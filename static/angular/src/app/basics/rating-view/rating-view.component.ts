@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-rating-view',
@@ -7,7 +7,8 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class RatingViewComponent implements OnInit {
 
-  @Input() rating: number;
+  @Output() @Input() rating: number;
+  @Input() readonly: boolean = true;
 
   constructor() { }
 

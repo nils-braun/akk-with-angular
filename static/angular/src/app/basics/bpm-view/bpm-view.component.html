@@ -1,1 +1,6 @@
-{{ bpm }}
+<span *ngIf="readonly">{{ bpm }}</span>
+
+<div *ngIf="!readonly" class="form-group">
+  <label for="bpm">BPM</label>
+  <input type="number" class="form-control" id="bpm" name="bpm" [(ngModel)]="bpm">
+</div>

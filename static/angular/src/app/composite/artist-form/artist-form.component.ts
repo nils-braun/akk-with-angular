@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Artist} from '../../entities/artist';
 
 @Component({
   selector: 'app-artist-form',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArtistFormComponent implements OnInit {
 
+  @Input() artist: Artist;
+
+  nameAfter: string;
+
   constructor() { }
 
   ngOnInit() {
+    if(this.artist != null) {
+      this.nameAfter = this.artist.name;
+    }
   }
-
 }

@@ -13,21 +13,14 @@
   <tbody>
     <tr *ngFor="let song of songs" (click)="editSong(song)">
       <td>{{ song.title }}</td>
-      <td>{{ song.artist }}</td>
-      <td>{{ song.dance }}</td>
-      <td>
-        <app-label-list-view [labels]="song.labels"></app-label-list-view>
-      </td>
-      <td>
-        <app-rating-view [rating]="song.rating"></app-rating-view>
-      </td>
+      <td><app-artist-view [artist]="song.artist" [readonly]="true"></app-artist-view></td>
+      <td><app-dance-view [dance]="song.dance" [readonly]="true"></app-dance-view></td>
+      <td><app-label-list-view [labels]="song.labels" [readonly]="true"></app-label-list-view></td>
+      <td><app-rating-view [rating]="song.rating" [readonly]="true"></app-rating-view></td>
       <td>
         Duration
       </td>
-      <!--<td>{{("00"+song.duration.minutes).slice(-2)}}:{{("00"+song.duration.seconds).slice(-2)}}</td>-->
-      <td>
-        <app-bpm-view [bpm]="song.bpm"></app-bpm-view>
-      </td>
+      <td><app-bpm-view [bpm]="song.bpm" [readonly]="true"></app-bpm-view></td>
     </tr>
   </tbody>
 </table>

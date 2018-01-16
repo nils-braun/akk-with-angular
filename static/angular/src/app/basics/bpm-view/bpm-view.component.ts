@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-bpm-view',
@@ -7,7 +7,8 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class BpmViewComponent implements OnInit {
 
-  @Input() bpm: number;
+  @Output() @Input() bpm: number;
+  @Input() readonly : boolean = true;
 
   constructor() { }
 

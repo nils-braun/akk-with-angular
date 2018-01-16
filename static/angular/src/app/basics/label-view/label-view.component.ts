@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output} from '@angular/core';
 import {Label} from '../../entities/label';
 
 @Component({
@@ -8,7 +8,8 @@ import {Label} from '../../entities/label';
 })
 export class LabelViewComponent implements OnInit {
 
-  @Input() label: Label;
+  @Output() @Input() label: Label;
+  @Input() readonly : boolean = true;
 
   constructor() { }
 

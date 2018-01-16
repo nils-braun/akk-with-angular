@@ -1,0 +1,6 @@
+<span *ngIf="readonly">{{ dance.name }}</span>
+
+<div *ngIf="!readonly" class="form-group">
+  <label for="dance">{{ labelText }}</label>
+  <input type="text" class="form-control" id="dance" required name="dance" [(ngModel)]="dance.name">
+</div>

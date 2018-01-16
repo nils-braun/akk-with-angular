@@ -1,3 +1,13 @@
-<p>
-  dance-form works!
-</p>
+<div class="container">
+    <form #danceForm="ngForm" (ngSubmit)="onSubmit()">
+      <app-dance-view labelText="Change dance from" [(dance)]="dance" [readonly]="false"></app-dance-view>
+      <div class="form-group">
+        <label for="name-after">Change dance into</label>
+        <input type="text" class="form-control" id="name-after" required name="name-after" [(ngModel)]="nameAfter">
+      </div>
+
+      <button type="button" class="btn" (click)="onSubmit()">Cancel</button>
+      <button type="submit" class="btn btn-success" [disabled]="!danceForm.valid">Submit</button>
+
+    </form>
+</div>

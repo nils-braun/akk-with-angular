@@ -24,6 +24,10 @@ import { DanceEditWindowComponent } from './windows/dance-edit-window/dance-edit
 import { ArtistEditWindowComponent } from './windows/artist-edit-window/artist-edit-window.component';
 import { ArtistFormComponent } from './composite/artist-form/artist-form.component';
 import { DanceFormComponent } from './composite/dance-form/dance-form.component';
+import { FormsModule } from '@angular/forms';
+import { NewSongWindowComponent } from './windows/new-song-window/new-song-window.component';
+import { DanceViewComponent } from './basics/dance-view/dance-view.component';
+import { ArtistViewComponent } from './basics/artist-view/artist-view.component';
 
 
 @NgModule({
@@ -48,11 +52,15 @@ import { DanceFormComponent } from './composite/dance-form/dance-form.component'
     ArtistEditWindowComponent,
     ArtistFormComponent,
     DanceFormComponent,
+    NewSongWindowComponent,
+    DanceViewComponent,
+    ArtistViewComponent,
   ],
   imports: [
-    NgbModule.forRoot(),
+    FormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
