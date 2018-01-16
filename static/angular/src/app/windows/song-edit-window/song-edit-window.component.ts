@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 import {Song} from '../../entities/song';
+import {SongService} from '../../services/song.service';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-song-edit-window',
@@ -12,21 +14,24 @@ export class SongEditWindowComponent implements OnInit {
 
   song: Song;
 
-  constructor(
-    private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private location : Location, private songService : SongService) { }
 
   ngOnInit() {
     let id = this.route.snapshot.paramMap.get("id");
-    this.song = {
-      id: +id,
-      title: "Test title",
-      artist: {id: 0, name: "Test artist"},
-      labels: [{ name: "label_1", color: "red", id: 0}],
-      bpm: 0,
-      rating: 0,
-      dance: {"id": 0, "name": "Test dance"},
-      userRating: 1,
-    };
-    console.log(this.song);
+    if(id != null) {
+      this.songService.getSong(+id).subscribe(song => this.song = song);
+    } else {
+      this.song = new Song();
+    }
   }
+
+  onSubmit() : void {
+    if(this.song.id == null) {
+      this.songService.addSong(this.song);
+    } else {
+      this.songService.updateSong(this.song);
+    }
+    this.location.back();
+  }
+
 }

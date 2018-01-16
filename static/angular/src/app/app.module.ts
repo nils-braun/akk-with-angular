@@ -9,12 +9,11 @@ import { SearchBarComponent } from './basics/search-bar/search-bar.component';
 import { SongTableComponent } from './composite/song-table/song-table.component';
 import { AddButtonComponent } from './basics/add-button/add-button.component';
 import { LoginFormComponent } from './composite/login-form/login-form.component';
-import { SongFormComponent } from './composite/song-form/song-form.component';
 import { RatingViewComponent } from './basics/rating-view/rating-view.component';
 import { LabelViewComponent } from './basics/label-view/label-view.component';
 import { LabelListViewComponent } from './basics/label-list-view/label-list-view.component';
 import { PlaylistViewComponent } from './composite/playlist-view/playlist-view.component';
-import { BpmViewComponent } from './basics/bpm-view/bpm-view.component';
+import { BPMViewComponent } from './basics/bpm-view/bpm-view.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SongListWindowComponent } from './windows/song-list-window/song-list-window.component';
 import { WishListWindowComponent } from './windows/wish-list-window/wish-list-window.component';
@@ -25,9 +24,9 @@ import { ArtistEditWindowComponent } from './windows/artist-edit-window/artist-e
 import { ArtistFormComponent } from './composite/artist-form/artist-form.component';
 import { DanceFormComponent } from './composite/dance-form/dance-form.component';
 import { FormsModule } from '@angular/forms';
-import { NewSongWindowComponent } from './windows/new-song-window/new-song-window.component';
 import { DanceViewComponent } from './basics/dance-view/dance-view.component';
 import { ArtistViewComponent } from './basics/artist-view/artist-view.component';
+import { SongService } from './services/song.service';
 
 
 @NgModule({
@@ -38,12 +37,11 @@ import { ArtistViewComponent } from './basics/artist-view/artist-view.component'
     SongTableComponent,
     AddButtonComponent,
     LoginFormComponent,
-    SongFormComponent,
     RatingViewComponent,
     LabelViewComponent,
     LabelListViewComponent,
     PlaylistViewComponent,
-    BpmViewComponent,
+    BPMViewComponent,
     SongListWindowComponent,
     WishListWindowComponent,
     PlaylistsWindowComponent,
@@ -52,7 +50,6 @@ import { ArtistViewComponent } from './basics/artist-view/artist-view.component'
     ArtistEditWindowComponent,
     ArtistFormComponent,
     DanceFormComponent,
-    NewSongWindowComponent,
     DanceViewComponent,
     ArtistViewComponent,
   ],
@@ -62,7 +59,7 @@ import { ArtistViewComponent } from './basics/artist-view/artist-view.component'
     AppRoutingModule,
     NgbModule.forRoot(),
   ],
-  providers: [],
+  providers: [SongService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

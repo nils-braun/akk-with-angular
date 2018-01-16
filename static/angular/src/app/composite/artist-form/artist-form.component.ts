@@ -15,8 +15,10 @@ export class ArtistFormComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    if(this.artist != null) {
-      this.nameAfter = this.artist.name;
+    // todo: get from id
+    if(this.artist == null) {
+      this.artist = new Artist();
     }
   }
+
 }

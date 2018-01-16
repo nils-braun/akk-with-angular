@@ -1,6 +1,6 @@
 <span *ngIf="readonly">{{ rating }}</span>
 
 <div *ngIf="!readonly" class="form-group">
-  <label for="rating">Rating</label>
-  <input type="number" class="form-control" id="rating" name="rating" [(ngModel)]="rating">
+  <label for="rating">{{ labelText }}</label>
+  <input type="number" class="form-control" id="rating" name="rating" [(ngModel)]="value">
 </div>

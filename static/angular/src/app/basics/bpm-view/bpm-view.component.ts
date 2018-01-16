@@ -1,18 +1,26 @@
-import {Component, Input, OnInit, Output} from '@angular/core';
+import {Component, forwardRef, Input, OnInit} from '@angular/core';
+import {NG_VALUE_ACCESSOR} from '@angular/forms';
+import {ValueAccessor} from '../value-accessor/value-accessor';
 
 @Component({
   selector: 'app-bpm-view',
   templateUrl: './bpm-view.component.html',
-  styleUrls: ['./bpm-view.component.css']
+  styleUrls: ['./bpm-view.component.css'],
+  providers: [ {
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() => BPMViewComponent),
+    multi: true
+} ]
 })
-export class BpmViewComponent implements OnInit {
-
-  @Output() @Input() bpm: number;
+export class BPMViewComponent extends ValueAccessor<number> implements OnInit  {
+  @Input() bpm: number;
   @Input() readonly : boolean = true;
-
-  constructor() { }
+  @Input() labelText: string = "Bpm";
 
   ngOnInit() {
+    // TODO: check if really needed
+    if(this.bpm != null) {
+      this.value = this.bpm;
+    }
   }
-
 }

@@ -1,6 +1,6 @@
 <div class="container">
     <form #artistForm="ngForm" (ngSubmit)="onSubmit()">
-      <app-artist-view labelText="Change artist from" [(artist)]="artist" [readonly]="false"></app-artist-view>
+      <app-artist-view labelText="Change artist from" [(ngModel)]="artist" name="artist" [readonly]="false"></app-artist-view>
       <div class="form-group">
         <label for="name-after">Change artist into</label>
         <input type="text" class="form-control" id="name-after" required name="name-after" [(ngModel)]="nameAfter">

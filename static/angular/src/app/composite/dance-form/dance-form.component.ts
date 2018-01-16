@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Dance} from '../../entities/dance';
+import {Dance} from '../../entities/dance';
 
 @Component({
   selector: 'app-dance-form',
@@ -15,8 +16,9 @@ export class DanceFormComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    if(this.dance != null) {
-      this.nameAfter = this.dance.name;
+    // todo: get from id
+    if(this.dance == null) {
+      this.dance = new Dance();
     }
   }
 

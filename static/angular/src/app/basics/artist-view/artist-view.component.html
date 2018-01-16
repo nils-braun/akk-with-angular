@@ -1,6 +1,6 @@
 <span *ngIf="readonly">{{ artist.name }}</span>
 
 <div *ngIf="!readonly" class="form-group">
-  <label for="artist">{{ labelText }}</label>
-  <input type="text" class="form-control" id="artist" required name="artist" [(ngModel)]="artist.name">
+  <label for="sub-artist">{{ labelText }}</label>
+  <input *ngIf="value" type="text" class="form-control" id="sub-artist" required name="sub-artist" [(ngModel)]="value.name">
 </div>
