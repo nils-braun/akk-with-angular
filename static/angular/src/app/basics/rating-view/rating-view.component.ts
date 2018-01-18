@@ -13,13 +13,8 @@ import {ValueAccessor} from '../value-accessor/value-accessor';
 } ]
 })
 export class RatingViewComponent extends ValueAccessor<number> implements OnInit  {
-  @Input() rating: number;
   @Input() readonly : boolean = true;
   @Input() labelText: string = "Rating";
 
-  ngOnInit() {
-    if(this.rating != null) {
-      this.value = this.rating;
-    }
-  }
+  ngOnInit() { }
 }

@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Artist} from '../../entities/artist';
+import {Location} from '@angular/common';
+import {ArtistService} from '../../services/artist.service';
 
 @Component({
   selector: 'app-artist-form',
@@ -8,17 +9,17 @@ import {Artist} from '../../entities/artist';
 })
 export class ArtistFormComponent implements OnInit {
 
-  @Input() artist: Artist;
+  @Input() artist: string;
 
   nameAfter: string;
 
-  constructor() { }
+  constructor(private location : Location, private artistService : ArtistService) { }
 
-  ngOnInit() {
-    // todo: get from id
-    if(this.artist == null) {
-      this.artist = new Artist();
-    }
+  ngOnInit() { }
+
+  onSubmit() : void {
+    this.artistService.updateArtist(this.artist, this.nameAfter);
+    this.location.back();
   }
 
 }

@@ -1,6 +1,7 @@
-<span *ngIf="readonly">{{ dance.name }}</span>
+<span *ngIf="readonly">{{ value }}</span>
 
 <div *ngIf="!readonly" class="form-group">
-  <label for="dance">{{ labelText }}</label>
-  <input *ngIf="value" type="text" class="form-control" id="dance" required name="dance" [(ngModel)]="value.name">
+  <label for="sub-dance">{{ labelText }}</label>
+  <input type="text" class="form-control" id="sub-dance" required name="sub-dance" [(ngModel)]="value"
+         [ngbTypeahead]="search">
 </div>

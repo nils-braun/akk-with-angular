@@ -27,6 +27,8 @@ import { FormsModule } from '@angular/forms';
 import { DanceViewComponent } from './basics/dance-view/dance-view.component';
 import { ArtistViewComponent } from './basics/artist-view/artist-view.component';
 import { SongService } from './services/song.service';
+import { ArtistService } from './services/artist.service';
+import { DanceService } from './services/dance.service';
 
 
 @NgModule({
@@ -59,7 +61,7 @@ import { SongService } from './services/song.service';
     AppRoutingModule,
     NgbModule.forRoot(),
   ],
-  providers: [SongService],
+  providers: [SongService, ArtistService, DanceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,7 +1,8 @@
 import {ControlValueAccessor} from '@angular/forms';
+import {Input} from '@angular/core';
 
 export class ValueAccessor<T> implements ControlValueAccessor {
-  _value: T;
+  @Input() _value: T;
 
   private changed : Array<(value: T) => void> = [];
   private touched : Array<() => void> = [];

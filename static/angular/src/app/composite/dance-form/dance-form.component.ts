@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Dance} from '../../entities/dance';
-import {Dance} from '../../entities/dance';
+import {Location} from '@angular/common';
+import {DanceService} from '../../services/dance.service';
 
 @Component({
   selector: 'app-dance-form',
@@ -9,17 +9,17 @@ import {Dance} from '../../entities/dance';
 })
 export class DanceFormComponent implements OnInit {
 
-  @Input() dance: Dance;
+  @Input() dance: string;
 
   nameAfter: string;
 
-  constructor() { }
+  constructor(private location : Location, private danceService : DanceService) { }
 
-  ngOnInit() {
-    // todo: get from id
-    if(this.dance == null) {
-      this.dance = new Dance();
-    }
+  ngOnInit() { }
+
+  onSubmit() : void {
+    this.danceService.updateDance(this.dance, this.nameAfter);
+    this.location.back();
   }
 
 }

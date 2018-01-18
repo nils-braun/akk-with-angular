@@ -13,14 +13,8 @@ import {ValueAccessor} from '../value-accessor/value-accessor';
 } ]
 })
 export class BPMViewComponent extends ValueAccessor<number> implements OnInit  {
-  @Input() bpm: number;
   @Input() readonly : boolean = true;
   @Input() labelText: string = "Bpm";
 
-  ngOnInit() {
-    // TODO: check if really needed
-    if(this.bpm != null) {
-      this.value = this.bpm;
-    }
-  }
+  ngOnInit() { }
 }
