@@ -34,4 +34,12 @@ export class SongEditWindowComponent implements OnInit {
     this.location.back();
   }
 
+  onDelete() : void {
+    this.songService.deleteSong(this.song);
+    this.location.back();
+  }
+
+  onCancel() : void {
+    this.location.back();
+  }
 }

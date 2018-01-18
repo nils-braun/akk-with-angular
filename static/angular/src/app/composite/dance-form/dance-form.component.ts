@@ -22,4 +22,8 @@ export class DanceFormComponent implements OnInit {
     this.location.back();
   }
 
+  onCancel() : void {
+    this.location.back();
+  }
+
 }

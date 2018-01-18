@@ -27,7 +27,7 @@ const SONGS : Song[] = [
     dance: DANCES[1],
     rating: 4,
     userRating: 0,
-    bpm: 48,
+    bpm: null,
     labels: [
       { id: 1, name: "label_2", color: "#55bbaa" },
       { id: 2, name: "label_3", color: "#00bb00" }
@@ -55,15 +55,22 @@ export class SongService {
   }
 
   updateSong(newSong: Song) : void {
-    let arrayIndex = SONGS.findIndex(song => song.id === newSong.id);
-    if(arrayIndex == -1) {
+    let index = SONGS.findIndex(song => song.id === newSong.id);
+    if(index == -1) {
       throw Error("Bad");
     }
-    SONGS[arrayIndex] = newSong;
-    console.log(newSong);
+    SONGS[index] = newSong;
   }
 
   addSong(newSong: Song) : void {
     SONGS.push(newSong);
+  }
+
+  deleteSong(oldSong: Song) : void {
+    let index = SONGS.findIndex(song => song.id === oldSong.id);
+    if(index == -1) {
+      throw Error("Bad");
+    }
+    SONGS.splice(index, 1);
   }
 }

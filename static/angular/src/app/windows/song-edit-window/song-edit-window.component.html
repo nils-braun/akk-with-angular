@@ -11,8 +11,8 @@
       <!--<app-label-list-view [(ngModel)]="song.labels" name="labels" id="labels"></app-label-list-view>-->
 
 
-      <button type="button" class="btn" (click)="onSubmit()">Cancel</button>
-      <button type="button" class="btn btn-danger" (click)="onSubmit()" [hidden]="song.id == null">Delete</button>
+      <button type="button" class="btn" (click)="onCancel()">Cancel</button>
+      <button type="button" class="btn btn-danger" (click)="onDelete()" [hidden]="song.id == null">Delete</button>
       <button type="submit" class="btn btn-success" [disabled]="!songForm.valid">Submit</button>
 
     </form>

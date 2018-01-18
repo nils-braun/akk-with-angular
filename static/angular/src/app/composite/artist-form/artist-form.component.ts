@@ -22,4 +22,7 @@ export class ArtistFormComponent implements OnInit {
     this.location.back();
   }
 
+  onCancel() : void {
+    this.location.back();
+  }
 }

@@ -1,6 +1,14 @@
-<span *ngIf="readonly">{{ value }}</span>
+<ng-template #st let-fill="fill" let-index="index">
+  <span *ngIf="fill === 100" class="star filled">&#9733;</span>
+  <span *ngIf="fill === 0" class="star">&#9733;</span>
+  <span *ngIf="fill < 100 && fill > 0" class="star">
+    <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+  </span>
+</ng-template>
+
+<ngb-rating *ngIf="readonly" [max]="5" [(rate)]="value" [readonly]="true" [starTemplate]="st"></ngb-rating>
 
 <div *ngIf="!readonly" class="form-group">
   <label for="rating">{{ labelText }}</label>
-  <input type="number" class="form-control" id="rating" name="rating" [(ngModel)]="value">
+  <ngb-rating id="rating" name="rating" [max]="5" [(ngModel)]="value" [resettable]="true" [starTemplate]="st"></ngb-rating>
 </div>
