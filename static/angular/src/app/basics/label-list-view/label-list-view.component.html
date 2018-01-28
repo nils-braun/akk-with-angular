@@ -1,8 +1,23 @@
 <span *ngIf="readonly">
-  <app-label-view *ngFor="let label of labels" [label]="label" [readonly]="readonly"></app-label-view>
+  <app-label-view *ngFor="let label of value" [label]="label"></app-label-view>
 </span>
+
 <div *ngIf="!readonly" class="form-group">
-  <!-- TODO -->
   <label for="labels">Labels</label>
-  <app-label-view *ngFor="let label of labels" [label]="label" [readonly]="readonly"></app-label-view>
+  <tag-input [(ngModel)]="value" theme='minimal' class="form-control" [separatorKeyCodes]="[32]" [addOnBlur]="true"
+             [animationDuration]="{enter: '0ms', leave: '0ms'}" [onlyFromAutocomplete]="true"
+             [identifyBy]="'name'" [displayBy]="'name'"
+             id="labels" #input>
+    <ng-template let-item="item" let-index="index">
+      <app-label-view [label]="item"></app-label-view>
+      <delete-icon (click)="input.removeItem(item, index)"></delete-icon>
+    </ng-template>
+    <tag-input-dropdown [showDropdownIfEmpty]="true" [focusFirstElement]="true"
+                        [autocompleteObservable]="search" [matchingFn]="matchingFn"
+                        [identifyBy]="'name'" [displayBy]="'name'">
+      <ng-template let-item="item" let-index="index">
+        <app-label-view [label]="item"></app-label-view>
+      </ng-template>
+    </tag-input-dropdown>
+  </tag-input>
 </div>

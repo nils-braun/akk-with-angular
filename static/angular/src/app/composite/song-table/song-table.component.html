@@ -15,7 +15,7 @@
       <td>{{ song.title }}</td>
       <td><app-artist-view [_value]="song.artist" [readonly]="true"></app-artist-view></td>
       <td><app-dance-view [_value]="song.dance" [readonly]="true"></app-dance-view></td>
-      <td><app-label-list-view [labels]="song.labels" [readonly]="true"></app-label-list-view></td>
+      <td><app-label-list-view [_value]="song.labels" [readonly]="true"></app-label-list-view></td>
       <td><app-rating-view [_value]="song.rating" [readonly]="true"></app-rating-view></td>
       <td>
         Duration

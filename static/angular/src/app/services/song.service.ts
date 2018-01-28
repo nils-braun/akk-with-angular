@@ -5,6 +5,7 @@ import { of } from 'rxjs/observable/of';
 import { Song } from '../entities/song';
 import {ARTISTS} from './artist.service';
 import {DANCES} from './dance.service';
+import {LABELS} from './label.service';
 
 
 const SONGS : Song[] = [
@@ -17,7 +18,7 @@ const SONGS : Song[] = [
     userRating: 0,
     bpm: 180,
     labels: [
-      { id: 0, name: "label_1", color: "#aa0000" }
+      LABELS[0]
     ]
   },
   {
@@ -29,8 +30,8 @@ const SONGS : Song[] = [
     userRating: 0,
     bpm: null,
     labels: [
-      { id: 1, name: "label_2", color: "#55bbaa" },
-      { id: 2, name: "label_3", color: "#00bb00" }
+      LABELS[1],
+      LABELS[2],
     ]
   }
 ];

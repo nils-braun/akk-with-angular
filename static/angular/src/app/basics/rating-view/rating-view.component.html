@@ -10,5 +10,5 @@
 
 <div *ngIf="!readonly" class="form-group">
   <label for="rating">{{ labelText }}</label>
-  <ngb-rating id="rating" name="rating" [max]="5" [(ngModel)]="value" [resettable]="true" [starTemplate]="st"></ngb-rating>
+  <ngb-rating class="form-control" id="rating" name="rating" [max]="5" [(ngModel)]="value" [resettable]="true" [starTemplate]="st"></ngb-rating>
 </div>

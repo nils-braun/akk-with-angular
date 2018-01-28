@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TagInputModule } from 'ngx-chips';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './basics/navbar/navbar.component';
@@ -29,6 +31,8 @@ import { ArtistViewComponent } from './basics/artist-view/artist-view.component'
 import { SongService } from './services/song.service';
 import { ArtistService } from './services/artist.service';
 import { DanceService } from './services/dance.service';
+import { LabelService } from './services/label.service';
+
 
 
 @NgModule({
@@ -60,8 +64,10 @@ import { DanceService } from './services/dance.service';
     BrowserModule,
     AppRoutingModule,
     NgbModule.forRoot(),
+    TagInputModule,
+    BrowserAnimationsModule,
   ],
-  providers: [SongService, ArtistService, DanceService],
+  providers: [SongService, ArtistService, DanceService, LabelService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

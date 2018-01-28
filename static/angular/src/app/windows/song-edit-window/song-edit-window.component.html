@@ -8,8 +8,7 @@
       <app-dance-view [(ngModel)]="song.dance" name="dance" [readonly]="false"></app-dance-view>
       <app-bpm-view [(ngModel)]="song.bpm" name="bpm" [readonly]="false"></app-bpm-view>
       <app-rating-view [(ngModel)]="song.userRating" name="rating" [readonly]="false"></app-rating-view>
-      <!--<app-label-list-view [(ngModel)]="song.labels" name="labels" id="labels"></app-label-list-view>-->
-
+      <app-label-list-view [(ngModel)]="song.labels" name="labels" [readonly]="false"></app-label-list-view>
 
       <button type="button" class="btn" (click)="onCancel()">Cancel</button>
       <button type="button" class="btn btn-danger" (click)="onDelete()" [hidden]="song.id == null">Delete</button>

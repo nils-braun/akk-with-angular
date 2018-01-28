@@ -7,10 +7,7 @@ import {Label} from '../../entities/label';
   styleUrls: ['./label-view.component.css']
 })
 export class LabelViewComponent implements OnInit {
-
-  @Output() @Input() label: Label;
-  @Input() readonly : boolean = true;
-
+  @Input() label: Label;
   constructor() { }
 
   ngOnInit() {
