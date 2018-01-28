@@ -1,0 +1,15 @@
+form {
+  padding: 2rem;
+}
+
+input {
+  font-size: 1.25rem;
+  border-width: 0 0 1pt 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+
+input:focus {
+  border-width: 0 0 1pt 0;
+}

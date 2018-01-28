@@ -4,6 +4,14 @@ input, input:focus, input:active {
   box-shadow: none;
 }
 
-.tag-input {
-  cursor: text;
+tag-input {
+  padding: 0;
+}
+
+tag {
+  height: 34px;
+}
+
+.tag-item-custom {
+  height: 100%;
 }

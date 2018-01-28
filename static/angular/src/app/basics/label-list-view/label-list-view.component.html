@@ -9,8 +9,10 @@
              [identifyBy]="'name'" [displayBy]="'name'"
              id="labels" #input>
     <ng-template let-item="item" let-index="index">
-      <app-label-view [label]="item"></app-label-view>
-      <delete-icon (click)="input.removeItem(item, index)"></delete-icon>
+      <div class="tag-item-custom">
+        <app-label-view [label]="item"></app-label-view>
+        <delete-icon (click)="input.removeItem(item, index)"></delete-icon>
+      </div>
     </ng-template>
     <tag-input-dropdown [showDropdownIfEmpty]="true" [focusFirstElement]="true"
                         [autocompleteObservable]="search" [matchingFn]="matchingFn"
