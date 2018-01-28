@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Song} from '../../entities/song';
 import {SongService} from '../../services/song.service';
+import {ActivatedRoute, ParamMap} from '@angular/router';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'app-song-list-window',
@@ -8,16 +10,13 @@ import {SongService} from '../../services/song.service';
   styleUrls: ['./song-list-window.component.css']
 })
 export class SongListWindowComponent implements OnInit {
-  songs : Song[];
+  songs : Observable<Song[]>;
 
-  constructor(private songService : SongService) { }
+  constructor(private songService : SongService, private route: ActivatedRoute) {
+  }
 
   ngOnInit() {
-    this.getSongs();
+      this.songs = this.route.queryParamMap.switchMap((params: ParamMap) =>
+        this.songService.getSongs(params.get("query"), params.get("orderBy")));
   }
-
-  getSongs() : void {
-    this.songService.getSongs().subscribe(songs => this.songs = songs);
-  }
-
 }

@@ -41,9 +41,27 @@ export class SongService {
 
   constructor() { }
 
-  getSongs() : Observable<Song[]> {
-    // TODO
-    return of(SONGS);
+  getSongs(term: string, orderBy: string) : Observable<Song[]> {
+    let songs: Song[];
+    if(!term) {
+      songs = SONGS;
+    } else {
+      songs = SONGS.filter(v =>
+        v.title.toLowerCase().includes(term.toLowerCase()) ||
+        v.artist.toLowerCase().includes(term.toLowerCase()) ||
+        v.dance.toLowerCase().includes(term.toLowerCase())
+        );
+    }
+
+    if(orderBy) {
+      songs = songs.sort((a, b) => {
+        if (a[orderBy] > b[orderBy]) { return -1}
+        else if (a[orderBy] < b[orderBy]) { return 1}
+        else return 0;
+      })
+    }
+
+    return of(songs);
   }
 
   getWishes() : Observable<Song[]> {

@@ -2,7 +2,7 @@
     <form #songForm="ngForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="title">Title</label>
-        <input type="text" class="form-control" id="title" required name="title" [(ngModel)]="song.title">
+        <input type="text" autocomplete="off" class="form-control" id="title" required name="title" [(ngModel)]="song.title">
       </div>
       <app-artist-view [(ngModel)]="song.artist" name="artist" [readonly]="false"></app-artist-view>
       <app-dance-view [(ngModel)]="song.dance" name="dance" [readonly]="false"></app-dance-view>

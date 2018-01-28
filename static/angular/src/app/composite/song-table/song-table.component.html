@@ -1,13 +1,8 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Song Title</th>
-      <th>Artist Name</th>
-      <th>Dance Name</th>
-      <th>Label</th>
-      <th>Rating</th>
-      <th>Duration</th>
-      <th>BPM</th>
+      <th *ngFor="let column of columns" (click)="sortTable(column.id)"
+          [ngClass]="{'table-active': orderBy == column.id}">{{ column.name }}</th>
     </tr>
   </thead>
   <tbody>

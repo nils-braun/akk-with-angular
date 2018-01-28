@@ -60,11 +60,11 @@ import { LabelService } from './services/label.service';
     ArtistViewComponent,
   ],
   imports: [
+    TagInputModule,
+    NgbModule.forRoot(),
     FormsModule,
     BrowserModule,
     AppRoutingModule,
-    NgbModule.forRoot(),
-    TagInputModule,
     BrowserAnimationsModule,
   ],
   providers: [SongService, ArtistService, DanceService, LabelService],
