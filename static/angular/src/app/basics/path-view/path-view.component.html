@@ -1,0 +1,9 @@
+<span *ngIf="readonly">{{ value }}</span>
+
+<div *ngIf="!readonly" class="form-group">
+  <label for="sub-path">{{ labelText }}</label>
+  <div class="custom-file">
+    <input type="file" class="custom-file-input" id="sub-path" name="sub-path" [(ngModel)]="value">
+    <label class="custom-file-label" for="sub-path">Choose file</label>
+  </div>
+</div>

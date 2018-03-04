@@ -1,0 +1,7 @@
+<span *ngIf="readonly">{{ minuteString }}:{{ secondString }}</span>
+
+<div *ngIf="!readonly" class="form-group">
+  <label for="sub-duration">{{ labelText }}</label>
+  <input type="text" readonly class="form-control" id="sub-duration" name="sub-duration"
+         value="{{ minuteString }}:{{ secondString }}">
+</div>
