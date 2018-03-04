@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {SongService} from '../../services/song.service';
 import {Song} from '../../entities/song';
+import {ActivatedRoute, ParamMap} from '@angular/router';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'app-wish-list-window',
@@ -8,17 +10,12 @@ import {Song} from '../../entities/song';
   styleUrls: ['./wish-list-window.component.css']
 })
 export class WishListWindowComponent implements OnInit {
+  wishes : Observable<Song[]>;
 
-  wishes : Song[];
-
-  constructor(private songService : SongService) { }
+  constructor(private songService : SongService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.getWishes();
+      this.wishes = this.route.queryParamMap.switchMap((params: ParamMap) =>
+        this.songService.getWishes(params.get("query"), params.get("orderBy")));
   }
-
-  getWishes() : void {
-    this.songService.getWishes().subscribe(wishes => this.wishes = wishes);
-  }
-
 }

@@ -70,9 +70,9 @@ export class SongService {
     return of(songs);
   }
 
-  getWishes() : Observable<Song[]> {
+  getWishes(term: string, orderBy: string) : Observable<Song[]> {
     // TODO
-    return of(SONGS);
+    return this.getSongs(term, orderBy);
   }
 
   getSong(id: number): Observable<Song> {

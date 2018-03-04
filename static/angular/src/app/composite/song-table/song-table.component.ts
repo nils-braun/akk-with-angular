@@ -10,6 +10,7 @@ import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 export class SongTableComponent implements OnInit {
 
   @Input() songs: Array<Song>;
+  @Input() readonly: boolean = false;
 
   orderBy: string;
 
@@ -25,7 +26,10 @@ export class SongTableComponent implements OnInit {
   ];
 
   editSong(song : Song) {
-    this.router.navigate(["/edit-song", song.id]);
+    if(!this.readonly)
+    {
+      this.router.navigate(["/edit-song", song.id]);
+    }
   }
 
   constructor(private router: Router, private route : ActivatedRoute) {
