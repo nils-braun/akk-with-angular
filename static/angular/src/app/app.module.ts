@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './basics/navbar/navbar.component';
 import { SearchBarComponent } from './basics/search-bar/search-bar.component';
 import { SongTableComponent } from './composite/song-table/song-table.component';
-import { AddButtonComponent } from './basics/add-button/add-button.component';
 import { LoginFormComponent } from './composite/login-form/login-form.component';
 import { RatingViewComponent } from './basics/rating-view/rating-view.component';
 import { LabelViewComponent } from './basics/label-view/label-view.component';
@@ -43,7 +42,6 @@ import { DurationViewComponent } from './basics/duration-view/duration-view.comp
     NavbarComponent,
     SearchBarComponent,
     SongTableComponent,
-    AddButtonComponent,
     LoginFormComponent,
     RatingViewComponent,
     LabelViewComponent,
