@@ -12,9 +12,8 @@
       <td><app-dance-view [_value]="song.dance" [readonly]="true"></app-dance-view></td>
       <td><app-label-list-view [_value]="song.labels" [readonly]="true"></app-label-list-view></td>
       <td><app-rating-view [_value]="song.rating" [readonly]="true"></app-rating-view></td>
-      <td>
-        Duration
-      </td>
+      <td><app-rating-view [_value]="song.userRating" [readonly]="true"></app-rating-view></td>
+      <td><app-duration-view [_value]="song.duration" [readonly]="true"></app-duration-view></td>
       <td><app-bpm-view [_value]="song.bpm" [readonly]="true"></app-bpm-view></td>
     </tr>
   </tbody>

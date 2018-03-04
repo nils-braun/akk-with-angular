@@ -19,6 +19,7 @@ export class SongTableComponent implements OnInit {
     {'id': 'dance', 'name': 'Dance Name'},
     {'id': 'label', 'name': 'Label'},
     {'id': 'rating', 'name': 'Rating'},
+    {'id': 'userRating', 'name': 'Your Rating'},
     {'id': 'duration', 'name': 'Duration'},
     {'id': 'bpm', 'name': 'BPM'},
   ];
