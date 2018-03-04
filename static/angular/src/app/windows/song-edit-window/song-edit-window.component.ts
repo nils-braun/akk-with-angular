@@ -10,11 +10,11 @@ import {Location} from '@angular/common';
   templateUrl: './song-edit-window.component.html',
   styleUrls: ['./song-edit-window.component.css']
 })
-export class SongEditWindowComponent implements OnInit {
 
+export class SongEditWindowComponent implements OnInit {
   song: Song;
 
-  constructor(private route: ActivatedRoute, private location: Location, private songService: SongService) { }
+  constructor(private route: ActivatedRoute, private songService: SongService) { }
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
@@ -23,23 +23,5 @@ export class SongEditWindowComponent implements OnInit {
     } else {
       this.song = new Song();
     }
-  }
-
-  onSubmit(): void {
-    if (this.song.id == null) {
-      this.songService.addSong(this.song);
-    } else {
-      this.songService.updateSong(this.song);
-    }
-    this.location.back();
-  }
-
-  onDelete(): void {
-    this.songService.deleteSong(this.song);
-    this.location.back();
-  }
-
-  onCancel(): void {
-    this.location.back();
   }
 }

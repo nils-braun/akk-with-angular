@@ -33,6 +33,8 @@ import { DanceService } from './services/dance.service';
 import { LabelService } from './services/label.service';
 import { PathViewComponent } from './basics/path-view/path-view.component';
 import { DurationViewComponent } from './basics/duration-view/duration-view.component';
+import { SongFormComponent } from './composite/song-form/song-form.component';
+import { WishEditWindowComponent } from './windows/wish-edit-window/wish-edit-window.component';
 
 
 
@@ -60,6 +62,8 @@ import { DurationViewComponent } from './basics/duration-view/duration-view.comp
     ArtistViewComponent,
     PathViewComponent,
     DurationViewComponent,
+    SongFormComponent,
+    WishEditWindowComponent,
   ],
   imports: [
     TagInputModule,

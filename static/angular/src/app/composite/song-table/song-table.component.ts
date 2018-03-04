@@ -11,6 +11,8 @@ export class SongTableComponent implements OnInit {
 
   @Input() songs: Array<Song>;
   @Input() readonly = false;
+  @Input() wish : boolean = false;
+
 
   orderBy: string;
 
@@ -27,7 +29,13 @@ export class SongTableComponent implements OnInit {
 
   editSong(song: Song) {
     if (!this.readonly) {
-      this.router.navigate(['/edit-song', song.id]);
+      let editURL : string;
+      if(this.wish) {
+        editURL = "./edit-wish";
+      } else {
+        editURL = "./edit-song";
+      }
+      this.router.navigate([editURL, song.id]);
     }
   }
 

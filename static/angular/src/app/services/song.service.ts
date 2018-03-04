@@ -98,4 +98,9 @@ export class SongService {
     }
     SONGS.splice(index, 1);
   }
+
+  convertWish(song: Song) : void {
+    // TODO
+    return;
+  }
 }

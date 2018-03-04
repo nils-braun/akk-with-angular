@@ -6,6 +6,7 @@ import { PlaylistsWindowComponent } from './windows/playlists-window/playlists-w
 import { ArtistEditWindowComponent } from './windows/artist-edit-window/artist-edit-window.component';
 import { DanceEditWindowComponent } from './windows/dance-edit-window/dance-edit-window.component';
 import { SongEditWindowComponent } from './windows/song-edit-window/song-edit-window.component';
+import { WishEditWindowComponent } from './windows/wish-edit-window/wish-edit-window.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/song-list', pathMatch: 'full' },
@@ -18,6 +19,8 @@ const routes: Routes = [
   { path: 'edit-dance/:id', component: DanceEditWindowComponent },
   { path: 'edit-song', component: SongEditWindowComponent },
   { path: 'edit-song/:id', component: SongEditWindowComponent },
+  { path: 'edit-wish', component: WishEditWindowComponent },
+  { path: 'edit-wish/:id', component: WishEditWindowComponent },
 
   // maybe easier with     data: { title: 'Heroes List' }
 ];
