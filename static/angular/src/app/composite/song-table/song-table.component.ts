@@ -10,7 +10,7 @@ import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 export class SongTableComponent implements OnInit {
 
   @Input() songs: Array<Song>;
-  @Input() readonly: boolean = false;
+  @Input() readonly = false;
 
   orderBy: string;
 
@@ -25,16 +25,15 @@ export class SongTableComponent implements OnInit {
     {'id': 'bpm', 'name': 'BPM'},
   ];
 
-  editSong(song : Song) {
-    if(!this.readonly)
-    {
-      this.router.navigate(["/edit-song", song.id]);
+  editSong(song: Song) {
+    if (!this.readonly) {
+      this.router.navigate(['/edit-song', song.id]);
     }
   }
 
-  constructor(private router: Router, private route : ActivatedRoute) {
+  constructor(private router: Router, private route: ActivatedRoute) {
     route.queryParamMap.subscribe((params: ParamMap) => {
-      this.orderBy = params.get("orderBy");
+      this.orderBy = params.get('orderBy');
     });
   }
 

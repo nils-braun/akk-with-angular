@@ -13,8 +13,8 @@ import {ValueAccessor} from '../value-accessor/value-accessor';
 } ]
 })
 export class DurationViewComponent extends ValueAccessor<number> implements OnInit  {
-  @Input() readonly : boolean = true;
-  @Input() labelText: string = "Duration";
+  @Input() readonly = true;
+  @Input() labelText = 'Duration';
 
   ngOnInit() { }
 
@@ -27,18 +27,18 @@ export class DurationViewComponent extends ValueAccessor<number> implements OnIn
   }
 
   get minutes() {
-    return Math.round(this.value / 60)
+    return Math.round(this.value / 60);
   }
 
   get minuteString() {
-    return this.minutes.toString().padStart(2, "0")
+    return this.minutes.toString().padStart(2, '0');
   }
 
   get seconds() {
-    return this.value % 60
+    return this.value % 60;
   }
 
   get secondString() {
-    return this.seconds.toString().padStart(2, "0")
+    return this.seconds.toString().padStart(2, '0');
   }
 }

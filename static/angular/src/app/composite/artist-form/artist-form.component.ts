@@ -13,16 +13,16 @@ export class ArtistFormComponent implements OnInit {
 
   nameAfter: string;
 
-  constructor(private location : Location, private artistService : ArtistService) { }
+  constructor(private location: Location, private artistService: ArtistService) { }
 
   ngOnInit() { }
 
-  onSubmit() : void {
+  onSubmit(): void {
     this.artistService.updateArtist(this.artist, this.nameAfter);
     this.location.back();
   }
 
-  onCancel() : void {
+  onCancel(): void {
     this.location.back();
   }
 }

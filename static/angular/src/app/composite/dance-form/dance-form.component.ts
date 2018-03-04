@@ -13,16 +13,16 @@ export class DanceFormComponent implements OnInit {
 
   nameAfter: string;
 
-  constructor(private location : Location, private danceService : DanceService) { }
+  constructor(private location: Location, private danceService: DanceService) { }
 
   ngOnInit() { }
 
-  onSubmit() : void {
+  onSubmit(): void {
     this.danceService.updateDance(this.dance, this.nameAfter);
     this.location.back();
   }
 
-  onCancel() : void {
+  onCancel(): void {
     this.location.back();
   }
 

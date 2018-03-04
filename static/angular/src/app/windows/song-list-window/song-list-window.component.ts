@@ -10,13 +10,13 @@ import {Observable} from 'rxjs/Observable';
   styleUrls: ['./song-list-window.component.css']
 })
 export class SongListWindowComponent implements OnInit {
-  songs : Observable<Song[]>;
+  songs: Observable<Song[]>;
 
-  constructor(private songService : SongService, private route: ActivatedRoute) {
+  constructor(private songService: SongService, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
       this.songs = this.route.queryParamMap.switchMap((params: ParamMap) =>
-        this.songService.getSongs(params.get("query"), params.get("orderBy")));
+        this.songService.getSongs(params.get('query'), params.get('orderBy')));
   }
 }

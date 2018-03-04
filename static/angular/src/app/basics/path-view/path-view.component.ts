@@ -13,8 +13,8 @@ import {ValueAccessor} from '../value-accessor/value-accessor';
 } ]
 })
 export class PathViewComponent extends ValueAccessor<string> implements OnInit  {
-  @Input() readonly : boolean = true;
-  @Input() labelText: string = "Path";
+  @Input() readonly = true;
+  @Input() labelText = 'Path';
 
   ngOnInit() { }
 }

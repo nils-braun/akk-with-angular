@@ -19,23 +19,23 @@ import 'rxjs/add/operator/distinctUntilChanged';
   } ]
 })
 export class LabelListViewComponent extends ValueAccessor<Label> implements OnInit  {
-  @Input() readonly: boolean = true;
+  @Input() readonly = true;
 
   @ViewChild('input') someInput: ElementRef;
 
-  constructor(private labelService : LabelService) {
+  constructor(private labelService: LabelService) {
     super();
   }
 
   ngOnInit() {
   }
 
-  search = (text: string) : Observable<Label[]> => {
+  search = (text: string): Observable<Label[]> => {
     return this.labelService.getLabels(text);
-  };
+  }
 
-  matchingFn(value, target) : boolean {
-    const targetValue : string = target.name.toString();
+  matchingFn(value, target): boolean {
+    const targetValue: string = target.name.toString();
     return targetValue && targetValue
         .toLowerCase()
         .indexOf(value.toLowerCase()) >= 0;

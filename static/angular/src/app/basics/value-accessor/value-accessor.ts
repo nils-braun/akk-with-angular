@@ -4,8 +4,8 @@ import {Input} from '@angular/core';
 export class ValueAccessor<T> implements ControlValueAccessor {
   @Input() _value: T;
 
-  private changed : Array<(value: T) => void> = [];
-  private touched : Array<() => void> = [];
+  private changed: Array<(value: T) => void> = [];
+  private touched: Array<() => void> = [];
 
   get value(): T {
     return this._value;

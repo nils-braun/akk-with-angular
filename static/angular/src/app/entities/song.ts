@@ -11,6 +11,6 @@ export class Song {
   userRating: number;
   bpm: number;
   path: string;
-  duration: number = 0; // in seconds
+  duration = 0; // in seconds
   comments: Comment[];
 }

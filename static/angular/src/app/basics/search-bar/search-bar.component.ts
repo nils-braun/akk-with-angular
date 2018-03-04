@@ -8,9 +8,9 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./search-bar.component.css']
 })
 export class SearchBarComponent implements OnInit {
-  searchTerm$ : Subject<string> = new Subject<string>();
+  searchTerm$: Subject<string> = new Subject<string>();
 
-  constructor(private router : Router, private route : ActivatedRoute) {
+  constructor(private router: Router, private route: ActivatedRoute) {
     this.searchTerm$.debounceTime(100)
       .distinctUntilChanged()
       .forEach(term => this.inputEvent(term)).catch();
@@ -20,7 +20,7 @@ export class SearchBarComponent implements OnInit {
   }
 
   inputEvent(searchString) {
-    this.router.navigate(['./'], {queryParams: { query: searchString }, queryParamsHandling: "merge",
+    this.router.navigate(['./'], {queryParams: { query: searchString }, queryParamsHandling: 'merge',
       relativeTo: this.route });
   }
 

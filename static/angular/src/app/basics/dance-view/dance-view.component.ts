@@ -19,11 +19,11 @@ import {DanceService} from '../../services/dance.service';
 } ]
 })
 export class DanceViewComponent extends ValueAccessor<string> implements OnInit  {
-  @Input() readonly : boolean = true;
-  @Input() labelText: string = "Dance";
-  @Input() typeAhead: boolean = true;
+  @Input() readonly = true;
+  @Input() labelText = 'Dance';
+  @Input() typeAhead = true;
 
-  constructor(private danceService : DanceService) {
+  constructor(private danceService: DanceService) {
     super();
   }
 

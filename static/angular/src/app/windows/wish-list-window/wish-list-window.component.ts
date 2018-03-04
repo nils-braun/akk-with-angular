@@ -10,12 +10,12 @@ import {Observable} from 'rxjs/Observable';
   styleUrls: ['./wish-list-window.component.css']
 })
 export class WishListWindowComponent implements OnInit {
-  wishes : Observable<Song[]>;
+  wishes: Observable<Song[]>;
 
-  constructor(private songService : SongService, private route: ActivatedRoute) { }
+  constructor(private songService: SongService, private route: ActivatedRoute) { }
 
   ngOnInit() {
       this.wishes = this.route.queryParamMap.switchMap((params: ParamMap) =>
-        this.songService.getWishes(params.get("query"), params.get("orderBy")));
+        this.songService.getWishes(params.get('query'), params.get('orderBy')));
   }
 }

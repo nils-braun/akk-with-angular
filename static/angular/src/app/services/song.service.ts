@@ -8,10 +8,10 @@ import {DANCES} from './dance.service';
 import {LABELS} from './label.service';
 
 
-const SONGS : Song[] = [
+const SONGS: Song[] = [
   {
     id: 0,
-    title: "My title",
+    title: 'My title',
     artist: ARTISTS[0],
     dance: DANCES[0],
     rating: 4.5,
@@ -26,7 +26,7 @@ const SONGS : Song[] = [
   },
   {
     id: 1,
-    title: "My other title",
+    title: 'My other title',
     artist: ARTISTS[1],
     dance: DANCES[1],
     rating: 4,
@@ -47,9 +47,9 @@ export class SongService {
 
   constructor() { }
 
-  getSongs(term: string, orderBy: string) : Observable<Song[]> {
+  getSongs(term: string, orderBy: string): Observable<Song[]> {
     let songs: Song[];
-    if(!term) {
+    if (!term) {
       songs = SONGS;
     } else {
       songs = SONGS.filter(v =>
@@ -59,18 +59,18 @@ export class SongService {
         );
     }
 
-    if(orderBy) {
+    if (orderBy) {
       songs = songs.sort((a, b) => {
-        if (a[orderBy] > b[orderBy]) { return -1}
-        else if (a[orderBy] < b[orderBy]) { return 1}
-        else return 0;
-      })
+        if (a[orderBy] > b[orderBy]) { return -1; }
+        if (a[orderBy] < b[orderBy]) { return 1; }
+        return 0;
+      });
     }
 
     return of(songs);
   }
 
-  getWishes(term: string, orderBy: string) : Observable<Song[]> {
+  getWishes(term: string, orderBy: string): Observable<Song[]> {
     // TODO
     return this.getSongs(term, orderBy);
   }
@@ -79,22 +79,22 @@ export class SongService {
     return of(SONGS.find(song => song.id === id));
   }
 
-  updateSong(newSong: Song) : void {
-    let index = SONGS.findIndex(song => song.id === newSong.id);
-    if(index == -1) {
-      throw Error("Bad");
+  updateSong(newSong: Song): void {
+    const index = SONGS.findIndex(song => song.id === newSong.id);
+    if (index === -1) {
+      throw Error('Bad');
     }
     SONGS[index] = newSong;
   }
 
-  addSong(newSong: Song) : void {
+  addSong(newSong: Song): void {
     SONGS.push(newSong);
   }
 
-  deleteSong(oldSong: Song) : void {
-    let index = SONGS.findIndex(song => song.id === oldSong.id);
-    if(index == -1) {
-      throw Error("Bad");
+  deleteSong(oldSong: Song): void {
+    const index = SONGS.findIndex(song => song.id === oldSong.id);
+    if (index === -1) {
+      throw Error('Bad');
     }
     SONGS.splice(index, 1);
   }

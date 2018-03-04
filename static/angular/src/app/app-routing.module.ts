@@ -7,7 +7,7 @@ import { ArtistEditWindowComponent } from './windows/artist-edit-window/artist-e
 import { DanceEditWindowComponent } from './windows/dance-edit-window/dance-edit-window.component';
 import { SongEditWindowComponent } from './windows/song-edit-window/song-edit-window.component';
 
-const routes : Routes = [
+const routes: Routes = [
   { path: '', redirectTo: '/song-list', pathMatch: 'full' },
   { path: 'song-list', component: SongListWindowComponent },
   { path: 'wish-list', component: WishListWindowComponent },

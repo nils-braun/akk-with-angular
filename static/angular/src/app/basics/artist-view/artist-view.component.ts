@@ -19,11 +19,11 @@ import {ArtistService} from '../../services/artist.service';
 } ]
 })
 export class ArtistViewComponent extends ValueAccessor<string> implements OnInit  {
-  @Input() readonly : boolean = true;
-  @Input() labelText: string = "Artist";
-  @Input() typeAhead: boolean = true;
+  @Input() readonly = true;
+  @Input() labelText = 'Artist';
+  @Input() typeAhead = true;
 
-  constructor(private artistService : ArtistService) {
+  constructor(private artistService: ArtistService) {
     super();
   }
 
