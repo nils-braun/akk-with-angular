@@ -6,7 +6,9 @@
       </div>
       <app-artist-view [(ngModel)]="song.artist" name="artist" [readonly]="false"></app-artist-view>
       <app-dance-view [(ngModel)]="song.dance" name="dance" [readonly]="false"></app-dance-view>
+      <app-path-view [(ngModel)]="song.path" name="path" [readonly]="false"></app-path-view>
       <app-bpm-view [(ngModel)]="song.bpm" name="bpm" [readonly]="false"></app-bpm-view>
+      <app-duration-view [(ngModel)]="song.duration" name="duration" [readonly]="false"></app-duration-view>
       <app-rating-view [(ngModel)]="song.userRating" name="rating" [readonly]="false"></app-rating-view>
       <app-label-list-view [(ngModel)]="song.labels" name="labels" [readonly]="false"></app-label-list-view>
 
