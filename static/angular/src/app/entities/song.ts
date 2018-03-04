@@ -1,12 +1,16 @@
 import {Label} from './label';
+import {Comment} from './comment';
 
 export class Song {
-  id: number = null;
-  title: string = "";
-  artist: string = "";
-  dance: string = "";
-  labels: Array<Label> = [];
-  rating: number = null;
-  userRating: number = null;
-  bpm: number = null;
+  id: number;
+  title: string;
+  artist: string;
+  dance: string;
+  labels: Label[];
+  rating: number;
+  userRating: number;
+  bpm: number;
+  path: string;
+  duration: number = 0; // in seconds
+  comments: Comment[];
 }

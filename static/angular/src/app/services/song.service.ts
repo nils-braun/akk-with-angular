@@ -19,7 +19,10 @@ const SONGS : Song[] = [
     bpm: 180,
     labels: [
       LABELS[0]
-    ]
+    ],
+    comments: [],
+    path: null,
+    duration: 400,
   },
   {
     id: 1,
@@ -32,7 +35,10 @@ const SONGS : Song[] = [
     labels: [
       LABELS[1],
       LABELS[2],
-    ]
+    ],
+    comments: [],
+    path: null,
+    duration: 242,
   }
 ];
 
