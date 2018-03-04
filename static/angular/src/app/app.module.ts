@@ -32,6 +32,8 @@ import { SongService } from './services/song.service';
 import { ArtistService } from './services/artist.service';
 import { DanceService } from './services/dance.service';
 import { LabelService } from './services/label.service';
+import { PathViewComponent } from './basics/path-view/path-view.component';
+import { DurationViewComponent } from './basics/duration-view/duration-view.component';
 
 
 
@@ -58,6 +60,8 @@ import { LabelService } from './services/label.service';
     DanceFormComponent,
     DanceViewComponent,
     ArtistViewComponent,
+    PathViewComponent,
+    DurationViewComponent,
   ],
   imports: [
     TagInputModule,
