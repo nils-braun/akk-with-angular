@@ -16,5 +16,9 @@ export class RatingViewComponent extends ValueAccessor<number> implements OnInit
   @Input() readonly : boolean = true;
   @Input() labelText: string = "Rating";
 
+  resetRating() {
+    this.value = 0;
+  }
+
   ngOnInit() { }
 }
