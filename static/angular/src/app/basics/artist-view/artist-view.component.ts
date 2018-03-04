@@ -21,6 +21,7 @@ import {ArtistService} from '../../services/artist.service';
 export class ArtistViewComponent extends ValueAccessor<string> implements OnInit  {
   @Input() readonly : boolean = true;
   @Input() labelText: string = "Artist";
+  @Input() typeAhead: boolean = true;
 
   constructor(private artistService : ArtistService) {
     super();
@@ -33,14 +34,7 @@ export class ArtistViewComponent extends ValueAccessor<string> implements OnInit
     text$
       .debounceTime(300)
       .distinctUntilChanged()
-      //.do(() => this.searching = true)
       .switchMap(term =>
           this.artistService.getArtists(term)
-        //.do(() => this.searchFailed = false)
-        //.catch(() => {
-        //  this.searchFailed = true;
-        //  return of([]);
-        //})
       )
-    //.do(() => this.searching = false)
 }

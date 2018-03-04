@@ -1,10 +1,7 @@
 <div class="container">
     <form #danceForm="ngForm" (ngSubmit)="onSubmit()">
       <app-dance-view labelText="Change dance from" [(ngModel)]="dance" name="dance" [readonly]="false"></app-dance-view>
-      <div class="form-group">
-        <label for="name-after">Change dance into</label>
-        <input type="text" class="form-control" id="name-after" required name="name-after" [(ngModel)]="nameAfter">
-      </div>
+      <app-dance-view [typeAhead]="false" labelText="Change dance into" [(ngModel)]="nameAfter" name="name-after" [readonly]="false"></app-dance-view>
 
       <button type="button" class="btn" (click)="onCancel()">Cancel</button>
       <button type="submit" class="btn btn-success" [disabled]="!danceForm.valid">Submit</button>

@@ -21,6 +21,7 @@ import {DanceService} from '../../services/dance.service';
 export class DanceViewComponent extends ValueAccessor<string> implements OnInit  {
   @Input() readonly : boolean = true;
   @Input() labelText: string = "Dance";
+  @Input() typeAhead: boolean = true;
 
   constructor(private danceService : DanceService) {
     super();
@@ -33,14 +34,7 @@ export class DanceViewComponent extends ValueAccessor<string> implements OnInit 
     text$
       .debounceTime(300)
       .distinctUntilChanged()
-      //.do(() => this.searching = true)
       .switchMap(term =>
           this.danceService.getDances(term)
-        //.do(() => this.searchFailed = false)
-        //.catch(() => {
-        //  this.searchFailed = true;
-        //  return of([]);
-        //})
       )
-    //.do(() => this.searching = false)
 }

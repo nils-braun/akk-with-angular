@@ -3,5 +3,7 @@
 <div *ngIf="!readonly" class="form-group">
   <label for="sub-dance">{{ labelText }}</label>
   <input type="text" class="form-control" id="sub-dance" required name="sub-dance" [(ngModel)]="value"
-         [ngbTypeahead]="search">
+         [ngbTypeahead]="search" *ngIf="typeAhead">
+  <input type="text" class="form-control" id="sub-dance" required name="sub-dance" [(ngModel)]="value"
+         *ngIf="!typeAhead">
 </div>
