@@ -35,6 +35,9 @@ import { PathViewComponent } from './basics/path-view/path-view.component';
 import { DurationViewComponent } from './basics/duration-view/duration-view.component';
 import { SongFormComponent } from './composite/song-form/song-form.component';
 import { WishEditWindowComponent } from './windows/wish-edit-window/wish-edit-window.component';
+import { LoginWindowComponent } from './windows/login-window/login-window.component';
+import {AuthenticationService} from './services/authentication.service';
+import {AuthenticationGuard} from './guards/authentication.guard';
 
 
 
@@ -64,6 +67,7 @@ import { WishEditWindowComponent } from './windows/wish-edit-window/wish-edit-wi
     DurationViewComponent,
     SongFormComponent,
     WishEditWindowComponent,
+    LoginWindowComponent,
   ],
   imports: [
     TagInputModule,
@@ -73,7 +77,14 @@ import { WishEditWindowComponent } from './windows/wish-edit-window/wish-edit-wi
     AppRoutingModule,
     BrowserAnimationsModule,
   ],
-  providers: [SongService, ArtistService, DanceService, LabelService],
+  providers: [
+    SongService,
+    ArtistService,
+    DanceService,
+    LabelService,
+    AuthenticationService,
+    AuthenticationGuard,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
