@@ -1,9 +1,7 @@
-<div class="container">
-    <form #artistForm="ngForm" (ngSubmit)="onSubmit()">
-      <app-artist-view labelText="Change artist from" [(ngModel)]="artist" name="artist" [readonly]="false"></app-artist-view>
-      <app-artist-view [typeAhead]="false" labelText="Change artist into" [(ngModel)]="nameAfter" name="name-after" [readonly]="false"></app-artist-view>
+<form #artistForm="ngForm" (ngSubmit)="onSubmit()">
+  <app-artist-view labelText="Change artist from" [(ngModel)]="artist" name="artist" [readonly]="false"></app-artist-view>
+  <app-artist-view [typeAhead]="false" labelText="Change artist into" [(ngModel)]="nameAfter" name="name-after" [readonly]="false"></app-artist-view>
 
-      <button type="button" class="btn" (click)="onCancel()">Cancel</button>
-      <button type="submit" class="btn btn-success" [disabled]="!artistForm.valid">Submit</button>
-    </form>
-</div>
+  <button type="button" class="btn" (click)="onCancel()">Cancel</button>
+  <button type="submit" class="btn btn-success" [disabled]="!artistForm.valid">Submit</button>
+</form>

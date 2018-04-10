@@ -1,10 +1,8 @@
-<div class="container">
-    <form #danceForm="ngForm" (ngSubmit)="onSubmit()">
-      <app-dance-view labelText="Change dance from" [(ngModel)]="dance" name="dance" [readonly]="false"></app-dance-view>
-      <app-dance-view [typeAhead]="false" labelText="Change dance into" [(ngModel)]="nameAfter" name="name-after" [readonly]="false"></app-dance-view>
+<form #danceForm="ngForm" (ngSubmit)="onSubmit()">
+  <app-dance-view labelText="Change dance from" [(ngModel)]="dance" name="dance" [readonly]="false"></app-dance-view>
+  <app-dance-view [typeAhead]="false" labelText="Change dance into" [(ngModel)]="nameAfter" name="name-after" [readonly]="false"></app-dance-view>
 
-      <button type="button" class="btn" (click)="onCancel()">Cancel</button>
-      <button type="submit" class="btn btn-success" [disabled]="!danceForm.valid">Submit</button>
+  <button type="button" class="btn" (click)="onCancel()">Cancel</button>
+  <button type="submit" class="btn btn-success" [disabled]="!danceForm.valid">Submit</button>
 
-    </form>
-</div>
+</form>
