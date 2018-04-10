@@ -1,0 +1,7 @@
+<div class="fixed-bottom container-fluid message-board">
+  <div class="row">
+    <div class="col-md-8 mx-auto" *ngFor='let message of messageService.messages'>
+      <app-alert-view [message]="message"></app-alert-view>
+    </div>
+  </div>
+</div>

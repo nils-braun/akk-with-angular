@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {AuthenticationService} from '../../services/authentication.service';
+import {MessageService} from '../../services/message.service';
 
 @Component({
   selector: 'app-login-form',
@@ -15,7 +16,8 @@ export class LoginFormComponent implements OnInit {
   constructor(
       private route: ActivatedRoute,
       private router: Router,
-      private authenticationService: AuthenticationService) { }
+      private authenticationService: AuthenticationService,
+      private MessageService: MessageService) { }
 
   ngOnInit() {
       // reset login status
@@ -30,7 +32,7 @@ export class LoginFormComponent implements OnInit {
       if(this.authenticationService.login(this.user.username, this.user.password)) {
         this.router.navigate([this.returnUrl]);
       } else {
-        //this.alertService.error(error);
+        this.MessageService.addDangerMessage("Wrong password or username!");
         this.loading = false;
       }
   }

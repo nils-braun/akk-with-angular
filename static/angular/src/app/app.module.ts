@@ -38,6 +38,9 @@ import { WishEditWindowComponent } from './windows/wish-edit-window/wish-edit-wi
 import { LoginWindowComponent } from './windows/login-window/login-window.component';
 import {AuthenticationService} from './services/authentication.service';
 import {AuthenticationGuard} from './guards/authentication.guard';
+import { MessagesViewComponent } from './basics/messages-view/messages-view.component';
+import { MessageService } from './services/message.service';
+import { AlertViewComponent } from './basics/alert-view/alert-view.component';
 
 
 
@@ -68,6 +71,8 @@ import {AuthenticationGuard} from './guards/authentication.guard';
     SongFormComponent,
     WishEditWindowComponent,
     LoginWindowComponent,
+    MessagesViewComponent,
+    AlertViewComponent,
   ],
   imports: [
     TagInputModule,
@@ -84,6 +89,7 @@ import {AuthenticationGuard} from './guards/authentication.guard';
     LabelService,
     AuthenticationService,
     AuthenticationGuard,
+    MessageService,
   ],
   bootstrap: [AppComponent]
 })
